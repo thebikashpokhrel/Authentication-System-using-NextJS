@@ -22,10 +22,10 @@ export async function POST(request) {
 
     await user.save();
 
-    return NextResponse.json(
-      { message: "User verified successfully", success: true },
-      { status: 400 }
-    );
+    return NextResponse.json({
+      message: "Acount verified successfully",
+      success: true,
+    });
   } catch (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
