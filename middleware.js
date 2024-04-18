@@ -15,5 +15,5 @@ export function middleware(request) {
 }
 
 export const config = {
-  matcher: ["/", "/signin", "/signout", "/profile", "/verifymail"],
+  matcher: ["/", "/signin", "/signout", "/profile"],
 };

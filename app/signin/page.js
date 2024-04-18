@@ -97,6 +97,11 @@ export default function () {
             Sign Up
           </Link>
         </div>
+        <div className="text-sm text-gray-800">
+          <Link href="/forgotpassword" className="text-black">
+            Forgot Password ?
+          </Link>
+        </div>
       </div>
     </div>
   );

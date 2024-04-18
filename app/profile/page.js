@@ -54,16 +54,6 @@ function profilePage() {
           >
             Sign Out
           </button>
-          {!user.isVerified ? (
-            <Link
-              className="px-3 py-1 bg-black border-white border-2 rounded-md text-white hover:opacity-85 transition-all mt-2"
-              href={`/verifymail?token=${user.verifyToken}`}
-            >
-              Verify Account
-            </Link>
-          ) : (
-            ""
-          )}
         </>
       )}
     </div>

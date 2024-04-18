@@ -1,12 +1,13 @@
 "use client";
 import React from "react";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import Link from "next/link";
 
 function verifyMailPage() {
   const searchParams = useSearchParams();
+  const router = useRouter();
   const [token, setToken] = React.useState("");
   const [isVerifying, setIsVerifying] = React.useState(false);
   const [isVerified, setIsVerified] = React.useState(false);

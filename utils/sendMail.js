@@ -16,8 +16,8 @@ export async function sendMail({ email, emailType, userId }) {
     } else if (emailType == "RESET") {
       await User.findByIdAndUpdate(userId, {
         $set: {
-          forgetPasswordToken: token,
-          forgetPasswordTokenExpiry: Date.now() + 36000000,
+          forgotPasswordToken: token,
+          forgotPasswordTokenExpiry: Date.now() + 36000000,
         },
       });
     }
@@ -38,8 +38,9 @@ export async function sendMail({ email, emailType, userId }) {
       emailType == "VERIFY"
         ? `Verify your account through this link ${process.env.DOMAIN_URI}/verifymail?token=${token}<br/>
         or Click <a href="${process.env.DOMAIN_URI}/verifymail?token=${token}">here</a> to verify.`
-        : `Reset your password through this link ${process.env.DOMAIN_URI}/verifymail?token=${token}<br/>
-        or Click <a href="${process.env.DOMAIN_URI}/verifymail?token=${token}">here</a> to reset.`;
+        : `<h2>Do not share this link with anyone </h2>
+        Reset your password through this link ${process.env.DOMAIN_URI}/forgotpassword?token=${token}<br/>
+        or Click <a href="${process.env.DOMAIN_URI}/forgotpassword?token=${token}">here</a> to reset.`;
 
     const options = {
       from: "thebikash@test.com",
