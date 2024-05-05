@@ -10,10 +10,12 @@ export function middleware(request) {
   }
 
   if (!isPublicPath && !token) {
-    return NextResponse.redirect(new URL("/signin", request.url));
+    return NextResponse.redirect(new URL("/", request.url));
   }
+
+  NextResponse.next();
 }
 
 export const config = {
-  matcher: ["/", "/signin", "/signout", "/profile"],
+  matcher: ["/", "/signin", "/signup"],
 };
